@@ -14,7 +14,9 @@
 - 结合render方法，生成操作列
 - 使用国际化，对语言进行汉化
 
-!
+![整体效果](https://github.com/ssy341/datatabes_cn_example_curd_java/blob/master/images/demo1.png)
+![添加](https://github.com/ssy341/datatabes_cn_example_curd_java/blob/master/images/demo2.png)
+![修改](https://github.com/ssy341/datatabes_cn_example_curd_java/blob/master/images/demo3.png)
 
 
 相关连接：
