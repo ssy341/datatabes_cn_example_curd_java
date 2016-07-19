@@ -19,6 +19,15 @@
 ![修改](https://github.com/ssy341/datatabes_cn_example_curd_java/blob/master/images/demo3.png)
 
 
+### DataTables 动态生成列 后台java实现
+
+- 客户端模式
+- ajax异步取数
+- 列动态创建
+
+![整体效果](https://github.com/ssy341/datatabes_cn_example_curd_java/blob/master/images/demo4.gif)
+
+
 相关连接：
 - [DataTables中文网](http://datatables.club)
 - [DataTables中文网博客](http://datatables.club/blog)
