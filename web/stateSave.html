@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>stateSave 状态保存</title>
+    <link rel="stylesheet" type="text/css" href="plugin/datatables/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="plugin/datatables/dataTables.bootstrap.css  "/>
+    <script src="plugin/datatables/jquery.js"></script>
+    <script src="plugin/datatables/bootstrap.min.js"></script>
+    <script src="plugin/datatables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="plugin/datatables/dataTables.bootstrap.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <!--table里不需要写th-->
+    <table id="example" class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>职位</th>
+                <th>薪水</th>
+                <th>开始日期</th>
+                <th>办公室</th>
+                <th>编号</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+</body>
+</html>
+
+
+<script>
+    $(function () {
+        $("#example").DataTable({
+            //开启本地保存功能
+            stateSave: true,
+            //保存状态操作
+            "stateSaveParams": function (settings, data) {
+                console.log("stateSaveParams");
+
+                //这里可以操作保存的数据，写上自己特定的逻辑
+                //data.search.search = "";
+            },
+            "stateSaveCallback": function (settings, data) {
+                console.log("stateSaveCallback");
+
+                //DT默认保存的key值为DataTables_+表格id+页面名称
+                localStorage.setItem('DataTables_' + settings.sInstance, JSON.stringify(data));
+
+                // 你可以把这些数据保存在服务器上，上面的代码标识使用本地储存来存储这些数据
+                /**$.ajax( {
+                        "url": "/state_save",
+                        "data": data,
+                        "dataType": "json",
+                        "type": "POST",
+                        "success": function () {}
+                    } );
+                 **/
+
+
+            },
+
+            //读取状态操作
+            "stateLoadParams": function (settings, data) {
+                console.log("stateSaveParams");
+
+                //在读取数据的时候可以改变数据，根据自己逻辑来处理
+                //data.search.search = "";
+
+                //或者你可以直接禁用从缓存里读取数据，只要直接返回false即可
+                //return false;
+            },
+            "stateLoadCallback": function (settings) {
+                console.log("stateLoadCallback");
+                return JSON.parse(localStorage.getItem('DataTables_' + settings.sInstance));
+
+                //同样你还可以从服务器取数，采用同步的方式获取到保存在服务器里的数据
+                /**var o;
+                 $.ajax( {
+                    "url": "/state_load",
+                    "async": false,
+                    "dataType": "json",
+                    "success": function (json) {
+                        o = json;
+                    }
+                } );
+                 return o;**/
+
+            },
+            //状态加载完后执行的回调函数
+            "stateLoaded": function (settings, data) {
+                console.log("stateLoaded");
+
+                //在这里你可以打印出保存的缓存数据
+                //alert( 'Saved filter was: '+data.search.search );
+
+            },
+            "ajax": {
+                "url": "/objects.txt"
+            },
+            "columns": [
+                {"data": "name"},
+                {"data": "position"},
+                {"data": "salary"},
+                {"data": "start_date"},
+                {"data": "office"},
+                {"data": "extn"}
+            ],
+            "language": {
+                "lengthMenu": "每页_MENU_ 条记录",
+                "zeroRecords": "没有找到记录",
+                "info": "第 _PAGE_ 页 ( 总共 _PAGES_ 页 )",
+                "infoEmpty": "无记录",
+                "search": "搜索：",
+                "infoFiltered": "(从 _MAX_ 条记录过滤)",
+                "paginate": {
+                    "previous": "上一页",
+                    "next": "下一页"
+                }
+            },
+            "dom": "<'row'<'col-xs-2'l><'#mytool.col-xs-4'><'col-xs-6'f>r>" +
+            "t" +
+            "<'row'<'col-xs-6'i><'col-xs-6'p>>"
+        });
+    });
+</script>

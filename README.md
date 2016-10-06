@@ -27,9 +27,15 @@
 
 ![整体效果](https://github.com/ssy341/datatabes_cn_example_curd_java/blob/master/images/demo4.gif)
 
+### DataTables 状态保存DEMO
+
+- stateSave参数的应用
+- stateSaveParams、stateSaveCallback、stateLoadParams、stateLoadCallback、stateLoaded 回调方法的执行顺序和应用场景
+
 
 相关连接：
 - [DataTables中文网](http://datatables.club)
 - [DataTables中文网博客](http://datatables.club/blog)
 - [DataTables中文网例子](http://datatables.club/example)
+- [DataTables中文网自助解决问题](http://datatables.club/example/diy.html)
 - [DataTables中文网代码在线编辑](http://code.datatables.club)
