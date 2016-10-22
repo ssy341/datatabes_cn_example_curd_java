@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>DataTables、DataGrid表格插件比较</title>
+    <link rel="stylesheet" type="text/css" href="plugin/datatables/jquery.dataTables.min.css">
+    <script src="plugin/datatables/jquery.js"></script>
+    <script src="plugin/datatables/jquery.dataTables.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="plugin/easyui/easyui.css">
+    <link rel="stylesheet" type="text/css" href="plugin/easyui/icon.css">
+    <link rel="stylesheet" type="text/css" href="plugin/easyui/color.css">
+    <script type="text/javascript" src="plugin/easyui/jquery.easyui.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <table id="example"  class="display">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>001</td><td>name1</td><td>2323</td>
+        </tr>
+        <tr>
+            <td>002</td><td>name2</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>003</td><td>name3</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>004</td><td>name4</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>005</td><td>name5</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>006</td><td>name6</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>007</td><td>name7</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>008</td><td>name8</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>009</td><td>name9</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>010</td><td>name10</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>011</td><td>name11</td><td>4612</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <table class="easyui-datagrid">
+        <thead>
+        <tr>
+            <th field="firstname">First Name</th>
+            <th field="lastname" >Last Name</th>
+            <th field="phone">Phone</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>001</td><td>name1</td><td>2323</td>
+        </tr>
+        <tr>
+            <td>002</td><td>name2</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>003</td><td>name3</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>004</td><td>name4</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>005</td><td>name5</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>006</td><td>name6</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>007</td><td>name7</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>008</td><td>name8</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>009</td><td>name9</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>010</td><td>name10</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>011</td><td>name11</td><td>4612</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+<!-- Button trigger modal -->
+
+</body>
+</html>
+
+
+<script>
+    $(function () {
+        $('#example').DataTable();
+    });
+</script>
