@@ -36,6 +36,9 @@
 
 - [DataTables表格插件和其他表格插件比较之（DataTalbe VS EasyUI DataGrid）零配置](http://datatables.club/blog/2016/10/22/dataTables-vs-another-table-of-plugin-easyui-datagrid-zero-configuration.html)
 
+### DataTables 入门例子
+
+- [DataTables入门例子（代码封装）](http://datatables.club/blog/2016/01/28/user-share-nbh1991.html)
 
 相关连接：
 - [DataTables中文网](http://datatables.club)
