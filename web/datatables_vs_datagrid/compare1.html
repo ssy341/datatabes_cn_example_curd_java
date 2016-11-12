@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>DataTables、DataGrid表格插件比较2</title>
+    <link rel="stylesheet" type="text/css" href="/plugin/datatables/jquery.dataTables.min.css">
+    <script src="/plugin/datatables/jquery.js"></script>
+    <script src="/plugin/datatables/jquery.dataTables.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="/plugin/easyui/easyui.css">
+    <link rel="stylesheet" type="text/css" href="/plugin/easyui/icon.css">
+    <link rel="stylesheet" type="text/css" href="/plugin/easyui/color.css">
+    <script type="text/javascript" src="/plugin/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/plugin/easyui/datagrid-filter.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <table id="example"  class="display">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>001</td><td>name1</td><td>2323</td>
+        </tr>
+        <tr>
+            <td>002</td><td>name2</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>003</td><td>name3</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>004</td><td>name4</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>005</td><td>name5</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>006</td><td>name6</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>007</td><td>name7</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>008</td><td>name8</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>009</td><td>name9</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>010</td><td>name10</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>011</td><td>name11</td><td>4612</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <table id="dataGrid">
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>001</td><td>name1</td><td>2323</td>
+        </tr>
+        <tr>
+            <td>002</td><td>name2</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>003</td><td>name3</td><td>4613</td>
+        </tr>
+        <tr>
+            <td>004</td><td>name4</td><td>4614</td>
+        </tr>
+        <tr>
+            <td>005</td><td>name5</td><td>4615</td>
+        </tr>
+        <tr>
+            <td>006</td><td>name6</td><td>4612</td>
+        </tr>
+        <tr>
+            <td>007</td><td>name7</td><td>4712</td>
+        </tr>
+        <tr>
+            <td>008</td><td>name8</td><td>4812</td>
+        </tr>
+        <tr>
+            <td>009</td><td>name9</td><td>4912</td>
+        </tr>
+        <tr>
+            <td>010</td><td>name10</td><td>5012</td>
+        </tr>
+        <tr>
+            <td>011</td><td>name11</td><td>5112</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+<!-- Button trigger modal -->
+
+</body>
+</html>
+
+
+<script>
+    $(function () {
+        $('#example').DataTable();
+
+
+        var dg = $('#dataGrid').datagrid({
+            pagination: true,
+            pageSize: 10,
+            columns: [[
+                {field: 'firstname', title: "first_name", sortable: true},
+                {field: 'lastname', title: "last_name", sortable: true},
+                {field: 'phone', title: "phone", sortable: true}
+            ]]
+        });
+
+        //开启过滤
+        dg.datagrid('enableFilter');
+    });
+</script>
