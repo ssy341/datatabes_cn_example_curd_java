@@ -118,12 +118,19 @@
 
 <script>
     $(function () {
-        $('#example').DataTable();
+        $('#example').DataTable({
+            columns:[
+                {data:"firstname"},
+                {data:"lastname"},
+                {data:"phone"}
+            ]
+        });
 
 
         var dg = $('#dataGrid').datagrid({
             pagination: true,
-            pageSize: 10,
+            remoteSort: false,
+            singleSelect: true,
             columns: [[
                 {field: 'firstname', title: "first_name", sortable: true},
                 {field: 'lastname', title: "last_name", sortable: true},
